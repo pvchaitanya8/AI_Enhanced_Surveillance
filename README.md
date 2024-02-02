@@ -1,5 +1,6 @@
 ## AI Enhanced Surveillance System
 
+
 ### Project Description
 
 The Face Recognition Surveillance System is designed to automate surveillance by searching for a particular person in a live camera feed using facial recognition technology. The system identifies faces in the camera feed and triggers an alert if a match is found in the database.
