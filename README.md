@@ -61,4 +61,4 @@ To get started with the Face Recognition Surveillance System, follow these steps
 
    ```bash
 pip install -r requirements.txt
-     ```
+   ```
