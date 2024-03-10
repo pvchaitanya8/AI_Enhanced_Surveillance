@@ -58,7 +58,13 @@ To get started with the Face Recognition Surveillance System, follow these steps
 
 
 # ⚠️ PROGRESS WORK:
-
+   ```bash
+python -m venv venv
+   ```
+   ```bash
+.\venv\Scripts\activate
+   ```
    ```bash
 pip install -r requirements.txt
    ```
+
