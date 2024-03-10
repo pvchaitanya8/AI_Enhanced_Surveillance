@@ -55,3 +55,10 @@ To get started with the Face Recognition Surveillance System, follow these steps
 3. Run the application and access the Input Page.
 4. Choose between starting the search from the webcam or editing the database.
 5. Follow the on-screen instructions to interact with the system.
+
+
+# ⚠️ PROGRESS WORK:
+
+   ```bash
+pip install -r requirements.txt
+     ```
