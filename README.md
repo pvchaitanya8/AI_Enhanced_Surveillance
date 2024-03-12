@@ -1,70 +1,42 @@
-## AI Enhanced Surveillance System
+# AI-Enhanced Surveillance System
 
+## Project Overview
 
-### Project Description
+The AI-Enhanced Surveillance System is a sophisticated solution designed to streamline surveillance operations through the application of facial recognition technology. By integrating advanced AI capabilities, this system automates the process of identifying individuals within a live camera feed, enhancing security and efficiency in surveillance activities.
 
-The Face Recognition Surveillance System is designed to automate surveillance by searching for a particular person in a live camera feed using facial recognition technology. The system identifies faces in the camera feed and triggers an alert if a match is found in the database.
+## Technical Insights
 
-### Technical Details
+The core of this project relies on artificial intelligence techniques and Python programming. While Python serves as the primary language for implementation, the architecture remains adaptable to incorporate alternative technologies should they better align with the project's objectives and requirements.
 
-The project leverages artificial intelligence and Python for its implementation. However, the flexibility is maintained for alternative technologies if they prove to be more suitable for the project's requirements.
+## Getting Started
 
-### Project Status
+To initiate utilization of the AI-Enhanced Surveillance System, follow these systematic steps:
 
-Currently, the project is in its initial stages of development. Below is an outline of the envisioned implementation:
-
-## Input Page
-
-The Input Page serves as the main interface for users and offers two primary options:
-
-1. **Start Searching from Webcam:**
-   - Clicking on this option initiates the process of searching for faces in the live camera feed.
-   
-2. **Editing Database:**
-   - Provides access to the database management section for adding, modifying, or removing search profiles.
-
-## Editing Database Page
-
-This page allows users to manage the database of search profiles. The following features are envisioned:
-
-- **Add New Search Profiles:**
-  - Users can input information such as images, names, IDs, and other details to create new search profiles.
-
-- **Save or Cancel:**
-  - After entering the necessary information, users can choose to save the changes or cancel the operation.
-
-- **Home Button:**
-  - A convenient button to navigate back to the Input Page.
-
-## Start Searching from Webcam Page
-
-This page focuses on the live search functionality. Key features include:
-
-- **Real-time Face Recognition:**
-  - The system actively searches for faces in the webcam feed using the pre-loaded search profiles.
-
-- **Alert Mechanism:**
-  - If a match is found, an alert is triggered to notify the user about the identified person.
-
-### Getting Started
-
-To get started with the Face Recognition Surveillance System, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Install the required dependencies as specified in the project documentation.
-3. Run the application and access the Input Page.
-4. Choose between starting the search from the webcam or editing the database.
-5. Follow the on-screen instructions to interact with the system.
-
-
-# ⚠️ PROGRESS WORK:
+1. Begin by cloning the repository onto your local machine.
+2. Proceed to install all necessary dependencies as meticulously outlined within the project documentation:
    ```bash
-python -m venv venv
+   python -m venv venv
    ```
    ```bash
-.\venv\Scripts\activate
+   .\venv\Scripts\activate
    ```
    ```bash
-pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
-
+3. Replace the MongoClient configuration with the specifications of your local database setup.
+4. Execute the application and access the Input Page to commence system operation.
+   ```bash
+   python app.py
+   ```
+## Sample Outputs:
+### Home page:
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/6a24e7ad-b212-4bce-bf4b-abd70f287a5e)
+### Add Person:
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/d749ba3f-c6ca-4c3e-b11f-05c8f725009b)
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/989b0227-64d7-4c4d-b51f-bd1083a59186)
+### Database:
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/8243b19d-4f31-4397-ac78-ec3842f9e7f9)
+### Detecting faces:
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/13979a3b-1db1-41a5-8483-ebb2ec284357)
+### Notification Pannel:
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/fb251b36-b7e0-4be9-86ad-3b5135e3ae44)
