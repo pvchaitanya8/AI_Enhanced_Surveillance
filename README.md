@@ -40,3 +40,5 @@ To initiate utilization of the AI-Enhanced Surveillance System, follow these sys
 ![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/13979a3b-1db1-41a5-8483-ebb2ec284357)
 ### Notification Pannel:
 ![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/fb251b36-b7e0-4be9-86ad-3b5135e3ae44)
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/e1c0d83e-d2c3-4b26-8958-881046f06ef4)
+
