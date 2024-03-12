@@ -9,7 +9,7 @@ import webbrowser
 import datetime
 
 # Connecting to MongoDB
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb://localhost:******/')    #Change This MongoClient 
 db = client['face_recognition']
 collection = db['known_faces']
 found_collection = db['found']
