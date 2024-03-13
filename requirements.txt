@@ -1,8 +1,5 @@
+pillow==10.2.0
+pymongo==4.6.2
 face_recognition==1.3.0
 opencv-python==4.9.0.80
 geocoder==1.38.1
-datetime==5.4
-pymongo==4.6.2
-Pillow==9.5.0
-tkinter
-webbrowser

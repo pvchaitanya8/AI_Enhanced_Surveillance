@@ -7,9 +7,10 @@ import cv2
 import geocoder
 import webbrowser
 import datetime
+from PIL import Image
 
 # Connecting to MongoDB
-client = MongoClient('mongodb://localhost:******/')    #Change This MongoClient 
+client = MongoClient('mongodb://localhost:27017')    #Change This MongoClient 
 db = client['face_recognition']
 collection = db['known_faces']
 found_collection = db['found']
@@ -148,7 +149,7 @@ def resize_background(event):
     global background_photo
     width = event.width
     height = event.height
-    resized_image = background_image.resize((width, height), Image.ANTIALIAS)
+    resized_image = background_image.resize((width, height), Image.ANTIALIAS if hasattr(Image, 'ANTIALIAS') else Image.LANCZOS)
     background_photo = ImageTk.PhotoImage(resized_image)
     background_label.config(image=background_photo)
 
