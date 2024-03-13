@@ -8,6 +8,7 @@ import geocoder
 import webbrowser
 import datetime
 from PIL import Image
+import numpy as np
 
 # Connecting to MongoDB
 client = MongoClient('mongodb://localhost:27017')    #Change This MongoClient 
@@ -24,7 +25,6 @@ def add_person_window():
     add_window = tk.Toplevel(root)
     add_window.title("Add a Person")
     add_window.config(bg="#1E1E1E")
-
     label_fg = "#FFFFFF"
     entry_bg = "#303030"
     entry_fg = "#FFFFFF"
@@ -60,6 +60,11 @@ def add_person(name, mobile_number, other_details, add_window):
             status_label.config(text="Mobile number must contain only numbers.")
             return
 
+        existing_person = collection.find_one({'name': name})
+        if existing_person:
+            status_label.config(text=f"{name} already exists in the database.")
+            return
+
         image_path = filedialog.askopenfilename()
 
         if image_path:
@@ -85,8 +90,8 @@ def alert(person_name):
     else:
         print("Person not found in database.")
 
-# Function to start searching from the webcam or a video file
 def start_search(video_path=None, frame_skip=1):
+
     def recognize_faces():
         if video_path:
             video_capture = cv2.VideoCapture(video_path)
@@ -108,6 +113,10 @@ def start_search(video_path=None, frame_skip=1):
             face_locations = face_recognition.face_locations(frame)
             face_encodings = face_recognition.face_encodings(frame, face_locations)
 
+            mask_alpha = 0.4  
+            mask_color = (34,139,34)  
+            mask = np.zeros_like(frame)  
+
             for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
                 matches = {}
                 for person in collection.find():
@@ -125,19 +134,22 @@ def start_search(video_path=None, frame_skip=1):
                         alert_button = tk.Button(notification_frame, text=f"Alert, Found:      {name}", command=lambda n=name: alert(n))
                         alert_button.pack(pady=5)
 
-                cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
+                
+                mask[top:bottom, left:right] = mask_color
+                frame = cv2.addWeighted(frame, 1, mask, mask_alpha, 0)
+
+                cv2.rectangle(frame, (left, top), (right, bottom), (34,139,34), 2)
+
                 font = cv2.FONT_HERSHEY_DUPLEX
                 cv2.putText(frame, ", ".join(names) if names else "Unknown", (left + 6, bottom - 6), font, 0.5, (255, 255, 255), 1)
 
             cv2.imshow('Real Time Face Recognition', frame)
 
-            # Waiting for 'q' key to exit the loop
             if cv2.waitKey(1) == ord('q'):
                 break
 
         video_capture.release()
         cv2.destroyAllWindows()
-
     recognize_faces()
 
 def start_search_from_file():
