@@ -29,6 +29,8 @@ To initiate utilization of the AI-Enhanced Surveillance System, follow these sys
    python app.py
    ```
 ## Sample Outputs:
+### Connecting database:
+![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/e6ca1dec-7bf0-452f-a0b1-4947ffe620c2)
 ### Home page:
 ![image](https://github.com/pvchaitanya8/AI_Enhanced_Surveillance/assets/93573686/6a24e7ad-b212-4bce-bf4b-abd70f287a5e)
 ### Add Person:
