@@ -10,10 +10,51 @@ import datetime
 from PIL import Image
 import numpy as np
 
+def save_data():
+    global data_face
+    data_face = entry.get()
+    print("Connected successfully to:", data_face)
+
+def on_enter(event):
+    save_button.config(bg="#5ACF59")
+
+def on_leave(event):
+    save_button.config(bg="#228B22")
+
+def center_window(window):
+    window.update_idletasks()
+    width = window.winfo_width()
+    height = window.winfo_height()
+    x_offset = (window.winfo_screenwidth() - width) // 2
+    y_offset = (window.winfo_screenheight() - height) // 2
+    window.geometry(f"{width}x{height}+{x_offset}+{y_offset}")
+
+root = tk.Tk()
+root.title("Collection connect")
+
+root.configure(bg="#222")
+label = tk.Label(root, text="""Enter collection name for Face Search:
+                 """, bg="#222", fg="white")
+label.pack()
+entry = tk.Entry(root, bg="#222", fg="white")
+entry.pack()
+
+save_button = tk.Button(root, text="Connect now", command=save_data, bg="#1E5D1F", fg="white", relief=tk.FLAT)
+save_button.pack()
+
+save_button.bind("<Enter>", on_enter)
+save_button.bind("<Leave>", on_leave)
+
+root.update_idletasks()
+root.geometry("400x80")  
+center_window(root)
+
+root.mainloop()
+
 # Connecting to MongoDB
 client = MongoClient('mongodb://localhost:27017')    #Change This MongoClient 
 db = client['face_recognition']
-collection = db['known_faces']
+collection = db[data_face]
 found_collection = db['found']
 
 # Finding current location of camera
